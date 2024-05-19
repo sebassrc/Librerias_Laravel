@@ -3,6 +3,7 @@
 use App\Http\Controllers\api\LibroController;
 use App\Http\Controllers\api\VentaController;
 use App\Http\Controllers\api\ClienteController;
+use App\Http\Controllers\api\ProveedorController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -41,3 +42,10 @@ Route::get('/clientes', [ClienteController::class, 'index'])->name('clientes.ind
 Route::get('/clientes/{cliente}', [ClienteController::class, 'show'])->name('clientes.show');
 Route::put('/clientes/{cliente}', [ClienteController::class, 'update'])->name('clientes.update');
 Route::delete('/clientes/{cliente}', [ClienteController::class, 'destroy'])->name('clientes.destroy');
+
+// Rutas para Proveedores
+Route::post('/proveedores', [ProveedorController::class, 'store'])->name('proveedores.store');
+Route::get('/proveedores', [ProveedorController::class, 'index'])->name('proveedores.index');
+Route::get('/proveedores/{proveedor}', [ProveedorController::class, 'show'])->name('proveedores.show');
+Route::put('/proveedores/{proveedor}', [ProveedorController::class, 'update'])->name('proveedores.update');
+Route::delete('/proveedores/{proveedor}', [ProveedorController::class, 'destroy'])->name('proveedores.destroy');
