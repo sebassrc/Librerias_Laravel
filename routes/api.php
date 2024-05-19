@@ -4,6 +4,7 @@ use App\Http\Controllers\api\LibroController;
 use App\Http\Controllers\api\VentaController;
 use App\Http\Controllers\api\ClienteController;
 use App\Http\Controllers\api\ProveedorController;
+use App\Http\Controllers\api\EventoController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -49,3 +50,10 @@ Route::get('/proveedores', [ProveedorController::class, 'index'])->name('proveed
 Route::get('/proveedores/{proveedor}', [ProveedorController::class, 'show'])->name('proveedores.show');
 Route::put('/proveedores/{proveedor}', [ProveedorController::class, 'update'])->name('proveedores.update');
 Route::delete('/proveedores/{proveedor}', [ProveedorController::class, 'destroy'])->name('proveedores.destroy');
+
+// Rutas para Eventos
+Route::post('/eventos', [EventoController::class, 'store'])->name('eventos.store');
+Route::get('/eventos', [EventoController::class, 'index'])->name('eventos.index');
+Route::get('/eventos/{evento}', [EventoController::class, 'show'])->name('eventos.show');
+Route::put('/eventos/{evento}', [EventoController::class, 'update'])->name('eventos.update');
+Route::delete('/eventos/{evento}', [EventoController::class, 'destroy'])->name('eventos.destroy');
