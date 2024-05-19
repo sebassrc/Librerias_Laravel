@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\api\LibroController;
+use App\Http\Controllers\api\VentaController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -26,3 +27,9 @@ Route::get('/libros/{libro}', [LibroController::class, 'show'])->name('libros.sh
 Route::put('/libros/{libro}', [LibroController::class, 'update'])->name('libros.update');
 Route::delete('/libros/{libro}', [LibroController::class, 'destroy'])->name('libros.destroy');
 
+// Rutas para Ventas
+Route::post('/ventas', [VentaController::class, 'store'])->name('ventas.store');
+Route::get('/ventas', [VentaController::class, 'index'])->name('ventas.index');
+Route::get('/ventas/{venta}', [VentaController::class, 'show'])->name('ventas.show');
+Route::put('/ventas/{venta}', [VentaController::class, 'update'])->name('ventas.update');
+Route::delete('/ventas/{venta}', [VentaController::class, 'destroy'])->name('ventas.destroy');
